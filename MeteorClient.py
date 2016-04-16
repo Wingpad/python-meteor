@@ -249,7 +249,7 @@ class MeteorClient(EventEmitter):
             if selector == {}:
                 results.append(doc)
             for key, value in selector.items():
-                if key in doc and doc[key] == value:
+                if doc not in results and key in doc and doc[key] == value:
                     results.append(doc)
         return results
 
